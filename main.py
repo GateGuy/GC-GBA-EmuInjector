@@ -18,7 +18,7 @@ tempGCFolder = path.join(tempFolder, "GC")
 
 def main(argv):
 	try:
-		opts, args = getopt.getopt(argv, "ha:c:t:", ["help", "ot"])
+		opts, args = getopt.getopt(argv, "ha:c:t:", ["help"])
 	except getopt.GetoptError:
 		printHelp()
 		sys.exit(2)
@@ -64,7 +64,7 @@ def main(argv):
 	# Copy over the defined TPLs
 	if bgPath != "":
 		os.remove(path.join(gcFolder, "root", "F_02.tpl"))
-		subprocess.call('\"'+wimgt+'\" ENCODE \"'+bgPath+'\" -d \"'+path.join(gcFolder, "root", "F_02.tpl")+'\" -x CMPR')
+		subprocess.call('\"'+wimgt+'\" ENCODE \"'+bgPath+'\" -d \"'+path.join(gcFolder, "root", "F_02.tpl")+'\" -x TPL')
 	# Build the new ISO
 	createDir(outputFolder)
 	while len(listdir(outputFolder)) > 0:
@@ -95,7 +95,7 @@ def initTempFolder():
 	mkdir(tempGCFolder)
 
 def printHelp():
-	print("\nUsage: GCGBA_ei.exe -a <input GBA> -c <input GC> -t <TPL> --ot")
+	print("\nUsage: GCGBA_ei.exe -a <input GBA> -c <input GC> -t <TPL/PNG>")
 	print()
 	print("-a <the GBA ROM that will be injected>")
 	print("-c <the Gamecube file that the GBA ROM will be injected into; this is zz_MarioVSDonkey_game.tgc, which can be extracted from Interactive Multi-Game Demo Disc Version 16/17, or zz_MarioPinballLand_game.tgc, which can be extracted from Interactive Multi-Game Demo Disc Version 18>")
