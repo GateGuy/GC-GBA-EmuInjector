@@ -8,9 +8,9 @@ from gatelib import *
 
 currFolder = getCurrFolder()
 
-gcit = path.join(currFolder, "apps", "gcit.exe")
-tgctogcm = path.join(currFolder, "apps", "tgctogcm.exe")
-wimgt = path.join(currFolder, "apps", "wimgt.exe")
+gcit = path.join(currFolder, "tools", "Gamecube ISO Tool", "gcit.exe")
+tgctogcm = path.join(currFolder, "tools", "tgctogcm.exe")
+wimgt = path.join(currFolder, "tools", "Wiimms Image Tool", "wimgt.exe")
 
 outputFolder = path.join(currFolder, "output")
 tempFolder = path.join(currFolder, "temp")
@@ -95,13 +95,13 @@ def initTempFolder():
 	mkdir(tempGCFolder)
 
 def printHelp():
-	print("\nUsage: GCGBA_ei.exe -a <input GBA> -c <input GC> -t <TPL/PNG>")
+	print("\nUsage: GCGBA_ei.py -a <input GBA> -c <input GC> -t <TPL/PNG>")
 	print()
 	print("-a <the GBA ROM that will be injected>")
 	print("-c <the Gamecube file that the GBA ROM will be injected into; this is zz_MarioVSDonkey_game.tgc, which can be extracted from Interactive Multi-Game Demo Disc Version 16/17, or zz_MarioPinballLand_game.tgc, which can be extracted from Interactive Multi-Game Demo Disc Version 18>")
 	print("-t <optional; a new texture/PNG file for the background image; if not set, the exiting background will be used>")
 	print()
-	print("Use the provided template_F_02.png as a template for a custom background image.")
+	print("Use the provided template.png as a template for a custom background image.")
 
 if __name__ == '__main__':
 	main(sys.argv[1:])
