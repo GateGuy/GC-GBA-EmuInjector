@@ -4,6 +4,7 @@ This is a Python script that uses several existing tools to inject a GBA ROM (<=
 Keep in mind that the official emulator was only designed to play a handful of specific games, so many games will not run well on it. Additionally, you can only use the built-in save data, meaning games that use save data may start with... interesting save files.
 
 ### Usage
+This is a command line tool that uses Python 3 (though Python 2 might also work).
 ```
 Usage: GCGBA_ei.py -a <input GBA> -c <input GC> -t <TPL/PNG>
 
